@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB1FE24F-BB88-45BC-A1FC-CE6ADC10BD62}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLTV</RootNamespace>
+    <AssemblyName>QLTV</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9, processorArchitecture=MSIL">
+      <HintPath>..\packages\RibbonWinForms.5.1.0-beta\lib\net472\System.Windows.Forms.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReader.Designer.cs">
+      <DependentUpon>frmReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuthor.Designer.cs">
+      <DependentUpon>frmAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategory.Designer.cs">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_Author\Delete_Author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_Author\Delete_Author.Designer.cs">
+      <DependentUpon>Delete_Author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_Author\Edit_Author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_Author\Edit_Author.Designer.cs">
+      <DependentUpon>Edit_Author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_Author\Insert_Author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_Author\Insert_Author.Designer.cs">
+      <DependentUpon>Insert_Author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_Reader\Delete_Reader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_Reader\Delete_Reader.Designer.cs">
+      <DependentUpon>Delete_Reader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_Reader\Edit_Reader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_Reader\Edit_Reader.Designer.cs">
+      <DependentUpon>Edit_Reader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_Reader\Insert_Reader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_Reader\Insert_Reader.Designer.cs">
+      <DependentUpon>Insert_Reader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmReader.resx">
+      <DependentUpon>frmReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuthor.resx">
+      <DependentUpon>frmAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCategory.resx">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_Author\Delete_Author.resx">
+      <DependentUpon>Delete_Author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_Author\Edit_Author.resx">
+      <DependentUpon>Edit_Author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_Author\Insert_Author.resx">
+      <DependentUpon>Insert_Author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_Reader\Delete_Reader.resx">
+      <DependentUpon>Delete_Reader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_Reader\Edit_Reader.resx">
+      <DependentUpon>Edit_Reader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_Reader\Insert_Reader.resx">
+      <DependentUpon>Insert_Reader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS_QLTV\BUS_QLTV.csproj">
+      <Project>{54ac7ce7-b99a-415e-a792-9eec234329b1}</Project>
+      <Name>BUS_QLTV</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO_QLTV\DTO_QLTV.csproj">
+      <Project>{4cee476d-9166-4e41-aea0-7c93df8aa40b}</Project>
+      <Name>DTO_QLTV</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
