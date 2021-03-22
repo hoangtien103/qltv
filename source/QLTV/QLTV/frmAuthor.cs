@@ -27,19 +27,17 @@ namespace QLTV
             this.dgvAuthor.Rows.Clear();
             DataTable dtTable = busTacgia.getTacGia();
 
-
-
             foreach (DataRow item in dtTable.Rows)
             {
                 int rowIndex = dgvAuthor.Rows.Add();
-                dgvAuthor.Rows[rowIndex].Cells[4].Value = item.ItemArray[0].ToString();          
+                dgvAuthor.Rows[rowIndex].Cells[4].Value = item.ItemArray[0].ToString();
                 dgvAuthor.Rows[rowIndex].Cells[0].Value = item.ItemArray[1].ToString();
                 dgvAuthor.Rows[rowIndex].Cells[1].Value = Convert.ToDateTime(item.ItemArray[2].ToString());
                 dgvAuthor.Columns["Birthday"].DefaultCellStyle.Format = "dd/MM/yyyy";
                 dgvAuthor.Rows[rowIndex].Cells[3].Value = item.ItemArray[3].ToString();
                 dgvAuthor.Rows[rowIndex].Cells[2].Value = item.ItemArray[3].ToString() == "True" ? "Nam" : "Nữ";
             }
-            
+
         }
         #endregion
 
@@ -132,37 +130,51 @@ namespace QLTV
 
         private void dgvAuthor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.load_details();   
+            this.load_details();
         }
 
-        private void dgvAuthor_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e) 
+        private void dgvAuthor_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             this.load_details();
         }
 
         private void load_details()
         {
-            if(this.dgvAuthor.SelectedRows.Count > 0 &&
+            if (this.dgvAuthor.SelectedRows.Count > 0 &&
                 this.dgvAuthor.SelectedRows[0].Index ==
                 this.dgvAuthor.Rows.Count - 1)
             {
                 this.txtAuthorName.ResetText();
-                //this.dtpNgaySinh.CustomFormat = " ";
-                //this.dtpNgaySinh.Value = new DateTime(" ");
-                // Resets dateTimePicker to default value
                 this.dtpNgaySinh.ResetText();
                 this.radGTFemale.Checked = true;
                 this.radGTMale.Checked = false;
             }
-            
+
             if (this.dgvAuthor.SelectedRows.Count > 0 && this.dgvAuthor.SelectedRows[0].Index == 0)
             {
                 int rowindex = this.dgvAuthor.SelectedCells[0].RowIndex;
-                this.txtAuthorName.Text = this.dgvAuthor.Rows[rowindex].Cells[0].Value.ToString();
-                this.dtpNgaySinh.Text = this.dgvAuthor.Rows[rowindex].Cells[1].Value.ToString();
+                if (null == this.dgvAuthor.Rows[rowindex].Cells[0].Value)
+                {
+                    this.txtAuthorName.Text = "";
+                }
+                else
+                {
+                    this.txtAuthorName.Text = this.dgvAuthor.Rows[rowindex].Cells[0].Value.ToString();
+                }
+                if (null == this.dgvAuthor.Rows[rowindex].Cells[1].Value)
+                {
+                    this.dtpNgaySinh.Text = "";
+                }
+                else
+                {
+                    this.dtpNgaySinh.Text = this.dgvAuthor.Rows[rowindex].Cells[1].Value.ToString();
+                }
+
                 this.radGTFemale.Checked = true;
 
-                if (this.dgvAuthor.Rows[rowindex].Cells[3].Value.ToString() == "True")
+                if (null != this.dgvAuthor.Rows[rowindex].Cells[3].Value
+                    && this.dgvAuthor.Rows[rowindex].Cells[3].Value.ToString() == "True"
+                    )
                 {
                     this.radGTMale.Checked = true;
                 }
@@ -177,7 +189,9 @@ namespace QLTV
                 this.dtpNgaySinh.Text = isBirthDay.ToString();
                 this.radGTFemale.Checked = true;
 
-                if (this.dgvAuthor.Rows[rowindex].Cells[3].Value.ToString() == "True")
+                if (null != this.dgvAuthor.Rows[rowindex].Cells[3].Value
+                    && this.dgvAuthor.Rows[rowindex].Cells[3].Value.ToString() == "True"
+                    )
                 {
                     this.radGTMale.Checked = true;
                 }

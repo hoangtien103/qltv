@@ -59,7 +59,7 @@ namespace QLTV.Popup_Author
                     gioitinh = 0;
                 }
 
-                DTO_Tacgia dtoAuthor = new DTO_Tacgia(0, txtAuthorName.Text, dtpNgaySinh.Value.ToString(), gioitinh);
+                DTO_Tacgia dtoAuthor = new DTO_Tacgia(0, txtAuthorName.Text, dtpNgaySinh.Value.ToString("MM/dd/yyyy"), gioitinh);
                 insertAuthor.insertTacGia(dtoAuthor);
                 return true;
             }

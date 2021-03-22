@@ -9,7 +9,7 @@ namespace DAO_QLTV
     {
         public DataTable getTacGia()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TACGIA", _conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TACGIA Where ISDELETED = 0", _conn);
             DataTable dtTacGia = new DataTable();
             da.Fill(dtTacGia);
             return dtTacGia;
@@ -19,7 +19,7 @@ namespace DAO_QLTV
 
         string insertCommon(string authorName, string birthDate, int gender)
         {
-            string sql = string.Format("INSERT INTO TACGIA VALUES (N'{0}', N'{1}', {2})", authorName, birthDate, gender);
+            string sql = string.Format("INSERT INTO TACGIA (TENTG,NGAYSINH,GIOITINH) VALUES (N'{0}', N'{1}', {2})", authorName, birthDate, gender);
             return sql;
         }
 
@@ -35,7 +35,7 @@ namespace DAO_QLTV
 
         string deleteCommon(int authorId)
         {
-            string sql = string.Format("DELETE FROM TACGIA WHERE MATG = {0}", authorId);
+            string sql = string.Format("UPDATE TACGIA SET ISDELETED = 1 WHERE MATG = {0}", authorId);
             return sql;
         }
 

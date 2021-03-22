@@ -29,13 +29,13 @@ namespace QLTV
             foreach (DataRow item in dtTable.Rows)
             {
                 int rowIndex = dgvReader.Rows.Add();
-                dgvReader.Rows[rowIndex].Cells[4].Value = item.ItemArray[0].ToString();          
+                dgvReader.Rows[rowIndex].Cells[4].Value = item.ItemArray[0].ToString();
                 dgvReader.Rows[rowIndex].Cells[0].Value = item.ItemArray[1].ToString();
                 dgvReader.Rows[rowIndex].Cells[1].Value = item.ItemArray[2].ToString();
                 dgvReader.Rows[rowIndex].Cells[3].Value = item.ItemArray[3].ToString();
                 dgvReader.Rows[rowIndex].Cells[2].Value = item.ItemArray[3].ToString() == "True" ? "Nam" : "Nữ";
             }
-            
+
         }
         #endregion
 
@@ -128,17 +128,17 @@ namespace QLTV
 
         private void dgvAuthor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.load_details();   
+            this.load_details();
         }
 
-        private void dgvAuthor_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e) 
+        private void dgvAuthor_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             this.load_details();
         }
 
         private void load_details()
         {
-            if(this.dgvReader.SelectedRows.Count > 0 &&
+            if (this.dgvReader.SelectedRows.Count > 0 &&
                 this.dgvReader.SelectedRows[0].Index ==
                 this.dgvReader.Rows.Count - 1)
             {
@@ -147,11 +147,11 @@ namespace QLTV
                 this.radGTFemale.Checked = true;
                 this.radGTMale.Checked = false;
             }
-            
+
             if (this.dgvReader.SelectedRows.Count > 0 && this.dgvReader.SelectedRows[0].Index == 0)
             {
                 int rowindex = this.dgvReader.SelectedCells[0].RowIndex;
-                if(null == this.dgvReader.Rows[rowindex].Cells[0].Value)
+                if (null == this.dgvReader.Rows[rowindex].Cells[0].Value)
                 {
                     this.txtReaderName.Text = "";
                 }

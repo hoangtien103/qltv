@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnOpenCatelogy = new System.Windows.Forms.Button();
             this.btnOpenReader = new System.Windows.Forms.Button();
+            this.btnAuthor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             // btnOpenReader
             // 
             this.btnOpenReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnOpenReader.Location = new System.Drawing.Point(64, 251);
+            this.btnOpenReader.Location = new System.Drawing.Point(67, 359);
             this.btnOpenReader.Name = "btnOpenReader";
             this.btnOpenReader.Size = new System.Drawing.Size(229, 89);
             this.btnOpenReader.TabIndex = 8;
@@ -77,11 +78,23 @@
             this.btnOpenReader.UseVisualStyleBackColor = true;
             this.btnOpenReader.Click += new System.EventHandler(this.btnOpenReader_Click);
             // 
+            // btnAuthor
+            // 
+            this.btnAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnAuthor.Location = new System.Drawing.Point(67, 239);
+            this.btnAuthor.Name = "btnAuthor";
+            this.btnAuthor.Size = new System.Drawing.Size(229, 89);
+            this.btnAuthor.TabIndex = 9;
+            this.btnAuthor.Text = "Author";
+            this.btnAuthor.UseVisualStyleBackColor = true;
+            this.btnAuthor.Click += new System.EventHandler(this.btnAuthor_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(361, 775);
+            this.Controls.Add(this.btnAuthor);
             this.Controls.Add(this.btnOpenReader);
             this.Controls.Add(this.btnOpenCatelogy);
             this.Controls.Add(this.label1);
@@ -102,6 +115,7 @@
         private System.Windows.Forms.RibbonOrbOptionButton ribbonOrbOptionButton1;
         private System.Windows.Forms.Button btnOpenCatelogy;
         private System.Windows.Forms.Button btnOpenReader;
+        private System.Windows.Forms.Button btnAuthor;
     }
 }
 

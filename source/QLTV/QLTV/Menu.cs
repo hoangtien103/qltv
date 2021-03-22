@@ -38,5 +38,11 @@ namespace QLTV
             ReaderGUI readerForm = new ReaderGUI();
             readerForm.ShowDialog();
         }
+
+        private void btnAuthor_Click(object sender, EventArgs e)
+        {
+            AuthorGUI authorForm = new AuthorGUI();
+            authorForm.ShowDialog();
+        }
     }
 }

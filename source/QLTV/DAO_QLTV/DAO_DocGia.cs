@@ -19,7 +19,7 @@ namespace DAO_QLTV
 
         string insertCommon(string readerName, int nk, int gender)
         {
-            string sql = string.Format("INSERT INTO DOCGIA VALUES (N'{0}', N'{1}', {2}, 0)", readerName, nk, gender);
+            string sql = string.Format("INSERT INTO DOCGIA (HOTENSV,NIENKHOA,GIOITINH) VALUES (N'{0}', N'{1}', {2})", readerName, nk, gender);
             return sql;
         }
 
