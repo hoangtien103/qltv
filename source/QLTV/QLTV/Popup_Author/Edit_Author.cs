@@ -89,7 +89,12 @@ namespace QLTV.Popup_Author
                 errorMessage = "Xin nhập tên tác giả";
                 return false;
             }
-            if(dtpNgaySinh.Value.ToString() == "")
+            if (dtpNgaySinh.Value > DateTime.Now)
+            {
+                errorMessage = "Ngày sinh không hợp lệ";
+                return false;
+            }
+            if (dtpNgaySinh.Value.ToString() == "")
             {
                 errorMessage = "Xin nhập ngày sinh tác giả";
                 return false;

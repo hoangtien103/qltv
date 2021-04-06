@@ -30,7 +30,6 @@
         {
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnOpenCatelogy = new System.Windows.Forms.Button();
             this.btnOpenReader = new System.Windows.Forms.Button();
             this.btnAuthor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
@@ -55,22 +54,10 @@
             this.label1.Text = "QUẢN LÝ THƯ VIỆN";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // btnOpenCatelogy
-            // 
-            this.btnOpenCatelogy.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenCatelogy.Location = new System.Drawing.Point(64, 129);
-            this.btnOpenCatelogy.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOpenCatelogy.Name = "btnOpenCatelogy";
-            this.btnOpenCatelogy.Size = new System.Drawing.Size(232, 89);
-            this.btnOpenCatelogy.TabIndex = 6;
-            this.btnOpenCatelogy.Text = "Category ";
-            this.btnOpenCatelogy.UseVisualStyleBackColor = true;
-            this.btnOpenCatelogy.Click += new System.EventHandler(this.btnOpenCatelogy_Click);
-            // 
             // btnOpenReader
             // 
             this.btnOpenReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnOpenReader.Location = new System.Drawing.Point(67, 359);
+            this.btnOpenReader.Location = new System.Drawing.Point(64, 243);
             this.btnOpenReader.Name = "btnOpenReader";
             this.btnOpenReader.Size = new System.Drawing.Size(229, 89);
             this.btnOpenReader.TabIndex = 8;
@@ -81,7 +68,7 @@
             // btnAuthor
             // 
             this.btnAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnAuthor.Location = new System.Drawing.Point(67, 239);
+            this.btnAuthor.Location = new System.Drawing.Point(64, 122);
             this.btnAuthor.Name = "btnAuthor";
             this.btnAuthor.Size = new System.Drawing.Size(229, 89);
             this.btnAuthor.TabIndex = 9;
@@ -96,7 +83,6 @@
             this.ClientSize = new System.Drawing.Size(361, 775);
             this.Controls.Add(this.btnAuthor);
             this.Controls.Add(this.btnOpenReader);
-            this.Controls.Add(this.btnOpenCatelogy);
             this.Controls.Add(this.label1);
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -113,7 +99,6 @@
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RibbonOrbOptionButton ribbonOrbOptionButton1;
-        private System.Windows.Forms.Button btnOpenCatelogy;
         private System.Windows.Forms.Button btnOpenReader;
         private System.Windows.Forms.Button btnAuthor;
     }

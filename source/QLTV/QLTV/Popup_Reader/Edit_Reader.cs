@@ -77,14 +77,20 @@ namespace QLTV.Popup_Reader
         private bool validate(out string errorMessage)
         {
             errorMessage = "";
-            if(txtReaderName.Text == "" || txtReaderName.Equals(""))
+            if(txtReaderName.Text.Trim() == "" || txtReaderName.Equals(""))
             {
-                errorMessage = "Xin nhập tên tác giả";
+                errorMessage = "Xin nhập tên độc giả";
                 return false;
             }
-            if(txtNK.ToString() == "")
+            if (txtNK.Text.Trim() == "" || txtNK.Equals(""))
             {
-                errorMessage = "Xin nhập ngày sinh tác giả";
+                errorMessage = "Xin nhập niên khóa";
+                return false;
+            }
+            int n;
+            if (!int.TryParse(txtNK.Text.Trim(), out n))
+            {
+                errorMessage = "Niên khóa không hợp lệ";
                 return false;
             }
             if(radGTFemale.Checked == false && radGTMale.Checked == false)

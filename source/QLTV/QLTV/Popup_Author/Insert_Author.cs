@@ -72,9 +72,14 @@ namespace QLTV.Popup_Author
         private bool validate(out string errorMessage)
         {
             errorMessage = "";
-            if (txtAuthorName.Text == "" || txtAuthorName.Equals(""))
+            if (txtAuthorName.Text.Trim() == "" || txtAuthorName.Equals(""))
             {
                 errorMessage = "Xin nhập tên tác giả";
+                return false;
+            }
+            if (dtpNgaySinh.Value>DateTime.Now)
+            {
+                errorMessage = "Ngày sinh không hợp lệ";
                 return false;
             }
             if (dtpNgaySinh.Value.ToString() == "")
